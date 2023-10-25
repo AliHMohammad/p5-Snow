@@ -24,19 +24,23 @@ function draw() {
 
 class SnowFlake {
     constructor() {
-        this.xPos = Math.floor(Math.random() * windowWidth);;
+        // this.xPos = Math.floor(Math.random() * windowWidth);
+        this.xPos = Math.floor(Math.random() * (windowWidth - (-350) + 1)) + -350;
         this.yPos = -(Math.random() * (500 - 100) + 100);
         this.diameter = Math.random() * 7 + 5;
         this.fallSpeed = Math.random() * 1.9 + 0.35;
+        this.windSpeed = Math.random() * 0.35 + 0.25;
     }
 
     fall() {
         this.yPos += this.fallSpeed;
-        this.yPos > windowHeight + 50 ? this.reset(): null;
+        this.xPos += this.windSpeed;
+        this.yPos > windowHeight + 50 || this.xPos > windowWidth + 50 ? this.reset(): null;
     }
 
     reset() {
         this.yPos = -(Math.random() * (300 - 100) + 100);
+        this.xPos = Math.floor(Math.random() * (windowWidth - -350 + 1)) + -350;
         this.fallSpeed = Math.random() * 1.9 + 0.35;
         this.diameter = Math.random() * 7 + 5;
     }
