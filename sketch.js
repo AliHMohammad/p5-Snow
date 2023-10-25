@@ -27,7 +27,8 @@ class SnowFlake {
     constructor() {
         this.xPos = Math.floor(Math.random() * (windowWidth - (-350) + 1)) + -350;
         this.yPos = -(Math.random() * (500 - 100) + 100);
-        this.diameter = Math.random() * 7 + 5;
+        // this.diameter = Math.random() * 7 + 5;
+        this.diameter = Math.random() * 7 + 1;
         this.fallSpeed = Math.random() * 1.9 + 0.35;
         this.windSpeed = Math.random() * 0.35 + 0.25;
     }
@@ -42,7 +43,8 @@ class SnowFlake {
         this.yPos = -(Math.random() * (300 - 100) + 100);
         this.xPos = Math.floor(Math.random() * (windowWidth - -350 + 1)) + -350;
         this.fallSpeed = Math.random() * 1.9 + 0.35;
-        this.diameter = Math.random() * 7 + 5;
+        // this.diameter = Math.random() * 7 + 5;
+        this.diameter = Math.random() * 7 + 1;
     }
 
     display() {
@@ -54,9 +56,13 @@ class SnowFlake {
 
     applyGlow() {
         for (let i = 0; i < 3; i++) {
+            if (this.diameter < 5 && i === 1) {
+                continue;
+            }
             fill(color(255, 255, 255, 10));
             noStroke();
-            circle(this.xPos, this.yPos, this.diameter + i * 5);
+            this.diameter < 5 ? circle(this.xPos, this.yPos, this.diameter + i * 4) : circle(this.xPos, this.yPos, this.diameter + i * 2.5);
+            // circle(this.xPos, this.yPos, this.diameter + i * 5);
         }
     }
 }
