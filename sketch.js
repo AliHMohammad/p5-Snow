@@ -1,4 +1,5 @@
 "use strict";
+//Created using P5.js
 
 window.addEventListener("load", initApp);
 
@@ -24,7 +25,6 @@ function draw() {
 
 class SnowFlake {
     constructor() {
-        // this.xPos = Math.floor(Math.random() * windowWidth);
         this.xPos = Math.floor(Math.random() * (windowWidth - (-350) + 1)) + -350;
         this.yPos = -(Math.random() * (500 - 100) + 100);
         this.diameter = Math.random() * 7 + 5;
