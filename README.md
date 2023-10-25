@@ -8,5 +8,5 @@ Inspired by [december-snow-2018
 
 ## Preview
 
-[GitHub Pages](https://alihmohammad.github.io/p5-ali-Snow/)
+[GitHub Pages](https://alihmohammad.github.io/p5-Snow/)
 
